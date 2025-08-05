@@ -1,71 +1,19 @@
-/* Tailwind Base */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* ===== Reset & Base Styling ===== */
-html, body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  color: white;
-  scroll-behavior: smooth;
+/* Blur animation for hero text */
+@keyframes blurIn {
+  0% {
+    filter: blur(10px);
+    opacity: 0;
+  }
+  100% {
+    filter: blur(0px);
+    opacity: 1;
+  }
 }
 
-
-/* Premium smooth gradient background for hero section */
-.hero-section {
-  background-image: 
-    radial-gradient(
-      circle at center,
-      rgba(76, 0, 255, 0.2) 0%,
-      rgba(0, 0, 0, 0) 60%
-    ),
-    linear-gradient(
-      180deg,
-      #000000 0%,
-      #050513 20%,
-      #0a0a1f 40%,
-      #10132a 60%,
-      #1a1446 80%,
-      #0a0a1f 100%
-    );
-  background-blend-mode: overlay;
-  background-size: cover;
-}
-
-/* Gradient text animation */
-@keyframes gradientMove {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-.animate-gradient {
-  background-size: 200% 200%;
-  animation: gradientMove 8s ease infinite;
-}
-
-/* Links */
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-/* Buttons */
-button {
-  cursor: pointer;
-}
-
-/* Glassmorphism Cards */
-.card-glass {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-/* Heading line height fix */
-h1, h2, h3, h4, h5, h6 {
-  line-height: 1.2;
+.blur-in {
+  animation: blurIn 1.2s ease-out forwards;
 }
